@@ -5,6 +5,14 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Callb
 from supabase import create_client, Client
 from flask import Flask
 import threading
+import sys
+
+# Костыль для имитации модуля imghdr в Python 3.13
+if sys.version_info >= (3, 13):
+    import types
+    imghdr = types.ModuleType('imghdr')
+    imghdr.what = lambda file, h=None: None
+    sys.modules['imghdr'] = imghdr
 
 # Настройка логирования
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
