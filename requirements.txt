@@ -1,4 +1,6 @@
 python-telegram-bot==13.15
 supabase==1.0.3
 flask==2.3.3
-standard-imghdr
+standard-imghdr==3.13.0
+urllib3==1.26.18
+six==1.16.0
